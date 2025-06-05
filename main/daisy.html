@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <style>
+        body{
+            background-color:rgb(60, 65, 63);
+        }
+        .header{
+            display: flex;
+            justify-content: center;
+            width: 1439px;
+            height: 250px;
+            background-color: rgb(148, 156, 161);
+            border-radius: 55px;
+        }
+        .header h3{
+            color: white;
+            font-size: 60px;
+        }
+        .instructions{
+            transform: translateX(250px);
+            border-radius: 80px;
+            margin-top: 40px;
+            display: flex;
+            justify-content:top;
+            flex-direction: column;
+            width: 1000px;
+            min-height:1000px;
+            background-color: rgb(148, 156, 161);
+        }
+        .instructions img{
+            margin-top: 50px;
+            margin-right: 100px;
+            width: 250px;
+            height: 350px;
+            border-radius: 70px;
+            transform: translateX(360px);
+        }
+        .instructions h4{
+            width: 800px;
+            font-size: x-large;
+            color: rgb(92, 54, 1);
+            margin-top: 50px;
+            transform: translateX(100px);
+
+        }
+        .instructions button{ 
+            margin-top: 30px;
+            padding: 12px 12px;
+            padding-bottom: 54px;
+            font-size: 1em;
+            background-color: rgb(255, 255, 255);
+            border: none;
+            border-radius: 15px;
+            color: rgb(60, 65, 63);
+            cursor: pointer;
+            box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.2);
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            height: 50px;
+            width:100px;
+            transform: translateX(430px);
+        }
+        .instructions button:hover
+        {
+            color:rgb(92, 54, 1);
+        }
+    </style>
+
+    <div class = "header">
+        <h3>Daisy Tote</h3>
+    </div>
+
+    <div class = "instructions">
+        <img src = "images/daisy.jpg" alt = :(>
+        <h4>Pattern:</h4>
+
+        <div class = "text"></div>
+        <button onclick = addstep()>see next step</button>
+    </div>
+
+
+
+
+    <script>
+        let currentStep = 0;
+
+        const steps = [
+        { text: "Step 1: Start with a magic ring using yellow yarn. Chain 1 and make 8 single crochets (sc) into the ring. Join with a slip stitch. Fasten off." },
+      { text: "Step 2: Attach white yarn. *(Ch 2, 3 dc, ch 2, sl st in next stitch)* to make a petal. Repeat 8 times to create 8 petals. Fasten off." },
+      { text: "Step 3: Attach green yarn to the space between petals. Chain 3 (counts as dc), work 2 dc in same space." },
+      { text: "Step 4: *(Ch 1, 3 dc in next space)* – repeat. For each corner, work (3 dc, ch 2, 3 dc). This forms the square shape. Join and fasten off." },
+      { text: "Step 5: Make 13–25 daisy squares, depending on your desired tote size. 3x3 or 5x5 layouts work well." },
+      { text: "Step 6: Join squares using whip stitch, slip stitch, or single crochet through the back loops. Create front and back panels." },
+      { text: "Step 7: Add sides and bottom with more squares or by crocheting panels to desired width." },
+      { text: "Step 8: Crochet a border around the joined panels using single or double crochet to clean up edges." },
+      { text: "Step 9: For handles, chain 70–100 and work 4–5 rows of single crochet. Sew them onto the tote securely." },
+      { text: "Step 10: (Optional) Add a fabric lining and inner pocket for structure. You can also sew on a zipper or button for closure." },
+ 
+
+];
+
+        function addstep()
+        {
+            if(currentStep == steps.length)
+            {
+                alert("done");
+                return;
+
+            }
+            const stepData = steps[currentStep];
+
+        const container = document.querySelector(".text");
+        const newText = document.createElement("h4");
+
+newText.textContent = stepData.text;
+newText.style.color = "rgb(92, 54, 1)";
+newText.style.fontSize =  "x-large";
+container.appendChild(newText);
+currentStep++;
+
+
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<style>
+
+body{
+    background-color:rgb(106, 163, 108);
+}
+    .header{
+        background-color: rgb(70, 129, 70);
+        width: 1423px;
+        height: 250px;
+        display: flex;
+        justify-content: center;
+        border-radius: 55px;
+    }
+    .header h5{
+        font-size: 60px;
+        color: rgb(161, 229, 146);
+        font-style: italic;
+
+    }
+    .instructions{
+        width: 1000px;
+        min-height:1000px;
+        background-color: rgb(85, 146, 88);
+        transform: translateX(235px);
+        border-radius: 55px;
+        display:flex;
+        justify-content: top;
+        flex-direction: column;
+        margin-top: 30px;
+    }
+    .instructions h6{
+        font-size: x-large;
+        color: rgb(161, 229, 146);
+        transform: translateX(180px);
+
+    }
+
+    .instructions button{
+        width: 100px;
+        height: 50px;
+        padding: 12px 12px;
+        border-radius: 15px;
+        background-color: rgb(151, 172, 151);
+        transform: translateX(430px);
+        border-style: none;
+    }
+    .instructions button:hover{
+        color: white;
+    }
+    .instructions img{
+        margin-top: 50px;
+        margin-right: 100px;
+        width: 250px;
+        height: 350px;
+        border-radius: 200px;
+        transform: translateX(360px);
+    }
+
+
+
+
+
+</style>
+
+<body>
+
+
+    <div class = "header">
+        <h5>Vines</h5>
+    </div>
+
+    <div class = "instructions">
+        <img src = "images/vines.JPG">
+        <h6>Begin by chaining 10</h6>
+        <div class = "text"></div>
+        <button type = "button" onclick="getInstruction()">See Next Step</button>
+
+
+    </div>
+<script>
+    let currentStep = 0;
+
+    const steps = [
+    {text: "Chain 4"},
+    {text: "In 2nd chain from hook: sc (single crochet)"},
+    {text: "Next chain: hdc (half double crochet"},
+    {text: "Next chain: dc (double crochet)"},
+    {text: "Chain 2, slip stitch into the base of the last dc to complete the leaf"},
+    {text: "Slip stitch back into the main vine chain to continue"},
+    {text: "continue adding leaves every 6-10 single stiches"}];
+
+function getInstruction()
+{
+
+    if(currentStep == steps.length)
+    {
+        alert("completed");
+        return;
+    }
+    const stepdata = steps[currentStep];
+    const container = document.querySelector(".text");
+    const newText = document.createElement("h6");
+
+    newText.textContent = stepdata.text;
+
+    container.appendChild(newText);
+    currentStep++;
+
+
+}
+</script>
+
+
+
+
+
+
+
+</body>
+</html>

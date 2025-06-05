@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+<style>
+    body{
+        background-color: rgb(240, 226, 201);
+    }
+    .instructions h4{
+        width: 800px;
+        font-size: x-large;
+        color: rgb(92, 54, 1);
+        margin-top: 50px;
+        transform: translateX(100px);
+
+
+
+    }
+    .instructions img{
+        margin-top: 50px;
+        margin-right: 100px;
+        width: 250px;
+        height: 350px;
+        border-radius: 200px;
+        transform: translateX(360px);
+
+
+    }
+    .instructions{
+        transform: translateX(250px);
+        border-radius: 80px;
+        margin-top: 40px;
+        display: flex;
+        justify-content:top;
+        flex-direction: column;
+        width: 1000px;
+        min-height:1000px;
+        background-color: rgb(239, 203, 112);
+        
+    }
+    .header h3{
+        font-size: 60px; 
+        color: rgb(200, 135, 44)
+            
+        
+
+    }
+    .header {
+        display: flex;
+        justify-content: center;
+        width: 1439px;
+        height: 250px;
+        background-color: rgb(239, 203, 112);
+        border-radius: 55px;
+        
+
+    }
+    .instructions button {
+    margin-top: 30px;
+    padding: 12px 12px;
+    padding-bottom: 54px;
+    font-size: 1em;
+    background-color: rgb(200, 135, 44);
+    border: none;
+    border-radius: 15px;
+    color: white;
+    cursor: pointer;
+    box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    height: 50px;
+    width:100px;
+    transform: translateX(430px);
+
+
+}
+.instructions button:hover{
+    color: rgb(69, 49, 5);
+}
+
+
+</style>
+</head>
+<body>
+
+<div class  = "header">
+    <h3>Sunny Tote</h3>
+</div>   
+
+
+
+<div class = "instructions">
+    <img src="images/sun.jpg" alt = ":(">
+    <h4>
+Part 1: Granny Squares
+    </h4>
+    <div class = 'text'></div>
+    <button onclick = "addstep()">see next step</button>
+</div>
+<!-- the div called instructions which is holding the button has another div inside of it
+ this inner div is empty but it will hold the test that you are adding to it as you press the button
+ thats why when you write the command inside of the function addstep you append child to the variable
+ container whichis a reference to the inner div "text" which will now hold the 
+  -->
+
+
+
+<script>
+
+    let currentStep = 0;
+
+    const steps = [
+  { text: "Begin with a magic circle and crochet 6 double crochets into the center ring, chain one and begin the second round increasing in every stitch" },
+  { text: "Step 2: Change colors. In the third round, double crochet into each stitch for two stitches, then chain two. Repeat all the way around." },
+  { text: "Step 3: Change colors again. For the fourth round, continue the pattern with chain spaces at the corners." },
+  { text: "Step 4: Finish the square and weave in your ends." },
+  { text: "Step 5: Continue the pattern: in corners, work 2 dc, ch 2, 2 dc; on sides, work 3 dc as space allows. Continue growing the square." },
+  { text: "Step 6: Once the square reaches the desired size (4–6 inches), fasten off and weave in ends with a yarn needle." },
+  { text: "Step 7: Make multiple squares for your tote (typically 13–25 depending on size). Join squares using slip stitch, whip stitch, or single crochet through back loops." },
+  { text: "Step 8: After joining, crochet a border if desired. Add a lining and handles (either crocheted or purchased straps). You're done!" }
+];
+
+    
+function addstep()
+{
+        if (currentStep == steps.length)
+        {
+            alert("completed");
+            return;
+        }
+
+        const stepData = steps[currentStep];
+        const container = document.querySelector(".text");
+        const newText = document.createElement("h4");
+
+        newText.textContent = stepData.text;
+        newText.style.color = "rgb(92, 54, 1)";
+        newText.style.fontSize =  "x-large";
+        container.appendChild(newText);
+        currentStep++;
+}
+
+
+</script>
+
+
+</body>
+</html>
